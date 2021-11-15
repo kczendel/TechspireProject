@@ -1,7 +1,7 @@
 --Umair Shamsuddin
 --Customer Sign-ups
---This report is used as a way for the client to keep track of any loyalty customer signups that occur. Loyalty members are the core of the loyalty system so having a record of when they became a loyalty member, including the beginning date, will let the client know the number of loyalty members and it's frequency. Also, knowing what type of customer they are can benefit the client in knowing how to make her system more appealing to the customers.
---This report displays a customers first and last name as well as what sort of customer they are, when they joined the membership, where they joined, and if they are still active members.
+--This report is used as a way for the client to keep track of any loyalty customer sign-ups that occur. Loyalty members are a core part of a loyalty system so knowing when a loyalty member signs up can be very benefical. For example, you want to know the number of loyalty customers that signed up in a specific period of time as well as if they are still active, then this report can provide sufficent information.
+--This report displays a customers first and last name as well as what sort of customer they are, when they joined the membership, if they are still active members, and who signed them up.
 --Row Number,Customer First Name,Customer Last Name,Begin Date,Employee Name,Customer Status,Customer Tier
 --,,,,,,
 
