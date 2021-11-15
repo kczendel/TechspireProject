@@ -1,17 +1,18 @@
 -- Kyle Dela Pena
 -- Employee Social Media
 -- Selects all employees who have social media and displays their handle along with their address and contact information.
--- The client can use this report to contact active or inactive employees with social media and pay or ask them to promote the store using their social media accounts. Each employee has their address listed so that the client can see the scope of each employee’s influence. People usually have a lot of followers from the same city or area, so understanding the range of each employee’s social media influence can help the client choose the right employee to promote the business. 
--- Row Num,Employee Name,Social Media Name,Social Media,Email Address,Phone Number,Zip Code,City,State/Province
---,,,,,phone,,,
+-- The client can use this report to contact active or inactive employees with social media and pay or ask them to promote the store using their social media accounts. Each employee has their address listed so that the client can see the scope of each employeeâ€™s influence. People usually have a lot of followers from the same city or area, so understanding the range of each employeeâ€™s social media influence can help the client choose the right employee to promote the business. 
+-- Row Num, First Name, Last Name, Social Media Type, Username, Email Address, Phone Number, Zip Code, City, State/Province
+-- null,null,null,null,null,null,phone,null,null,null
 
 SELECT ROW_NUMBER() 
 OVER(ORDER BY Employee.last_name) AS 'Row Num', 
-CONCAT(Employee.first_name, ' ', Employee.last_name) as 'Name',
-SocialMediaType.social_media_name AS 'Social Media Name',
-EmployeeSocialMedia.social_media_code AS 'Social Media',
+Employee.first_name AS 'First Name', 
+Employee.last_name AS 'Last Name', 
+SocialMediaType.social_media_name AS 'Social Media Type',
+EmployeeSocialMedia.social_media_code AS 'Username',
 Employee.email_address AS 'Email Address',
-Employee.phone_number AS 'Phone Number',
+Employee.phone_number AS PhoneNumber,
 Location.zip_code AS 'Zip Code', 
 Location.city AS 'City', 
 StateProvince.state_name AS 'State/Province'
