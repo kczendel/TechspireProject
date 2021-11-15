@@ -1,9 +1,9 @@
 --Umair Shamsuddin
---Employee Amount of Loyalty Sign-ins
---The client can use this report as a way to keep track of the number of customers signed up for loyalty membership per employee. Specifically, the focus is on the employee in that it keeps track of which employee signed up what loyalty customer as well as what that employee's current status is in the business. For example, if the client sees a large number of loyalty member signups on a specific day or week then they can look at the  employee who is the most adept at that and make better use of them.
---The report displays info mainly related to the employee such as the employee name, what type of employee they are, if they are currently an employee or not. It also shows which customer was signed-up and when.
---Row number,Employee First Name,Employee Last Name,Employee Category,Customer First Name,Customer Last Name,Customer Begin Date,Store Name
---,,,,,,,,
+--Employee Amount of Loyalty Sign-ups In a Specific Time Period
+--The client can use this report as a way to keep track of the frequency of customer sign-ups in a specific time period and what employees were most active in doing so. With this report, the client will know which employee was the most proactive in creating loyalty customers so that the performance of thiese individuals can be kept track of. For example, if the client wants to know which employees tend to get the most people to sign up as a way to reward them for their efforts, then they cn generate this report and know which name shows up the most.
+--This report displays an employees name, type, and status as well as the customer they signed up's first name, when they signed up, and where they signed up within a specific time frame.
+--Row number,Employee First Name,Employee Last Name,Employee Type,Employee Status,Customer First Name,Customer Begin Date,Store Name
+--,,,,,,,
 
 DECLARE @begin_date VARCHAR(12) = '2015-01-01'
 DECLARE @end_date VARCHAR(12) = '2015-12-31'
