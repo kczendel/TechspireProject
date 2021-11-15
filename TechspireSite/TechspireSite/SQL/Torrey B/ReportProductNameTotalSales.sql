@@ -1,5 +1,5 @@
 --Torrey Brett
---Product Name and Total Sales
+--Product Name and Total Sales Report
 --This report will give the client insight into the total sales of a product. She can find this data useful to view which products have sold the most dollar amount overtime. The client will utilize this report during tax season or for general record keeping purposes. The reason for this is to help with financial preparations or to help the client make informed decisions about which products she offers that has the highest total sales in monetary value.
 --Included in this report is the product name and the sum sales of that product.
 --Row Number, Product Name, Sum Sales, Item Price, Number of Items Sold 
