@@ -9,7 +9,7 @@ SELECT ROW_NUMBER()
 OVER(ORDER BY "Order".order_date) AS num_row, 
 Customer.first_name AS "First Name", 
 Customer.last_name AS "Last Name", 
-Store.store_name AS "Order Number", 
+Store.store_name AS "Store", 
 "Order".order_date AS "Order Date",
 ABS(PointLog.points_amount) AS "Points Used",
 PointReasonType.reason_name AS "Reason Name"
