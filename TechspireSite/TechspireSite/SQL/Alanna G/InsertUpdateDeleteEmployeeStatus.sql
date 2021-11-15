@@ -9,9 +9,9 @@
 
 --UPDATE EmployeeStatus
 --SET status_name = 'Temp'
---WHERE id = 10
+--WHERE id = 6
 --SELECT * FROM EmployeeStatus WHERE status_name = 'Seasonal'
 
 --DELETE FROM EmployeeStatus
---WHERE id = 10
+--WHERE id = 6
 

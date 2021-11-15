@@ -8,9 +8,9 @@
 --VALUES ('Seasonal','Limited-time offer')
 
 --UPDATE BanType
---SET ban_name = 'No Points'
---WHERE id = 1
---SELECT * FROM BanType WHERE ban_name = 'Expensive'
+--SET ban_name = 'Holiday'
+--WHERE id = 3
+--SELECT * FROM BanType WHERE ban_name = 'Seasonal'
 
 --DELETE FROM BanType
---WHERE id=4
+--WHERE id=3
