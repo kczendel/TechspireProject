@@ -26,4 +26,3 @@ WHERE CustomerStatus.id = @current_status_id
 AND Tier.tier_name = @tier_name
 
 GROUP BY Customer.begin_date, Customer.first_name, Customer.last_name, Customer.birthdate, Customer.email_address, Customer.phone_number, CustomerStatus.status_name, Customer.point_total, Tier.tier_name
-ORDER BY Customer.last_name, Customer.first_name;
