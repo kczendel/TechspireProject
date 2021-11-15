@@ -5,20 +5,24 @@
 --Row number,Employee First Name,Employee Last Name,Employee Category,Customer First Name,Customer Last Name,Customer Begin Date,Store Name
 --,,,,,,,,
 
+DECLARE @begin_date VARCHAR(12) = '2015-01-01'
+DECLARE @end_date VARCHAR(12) = '2015-12-31'
+
 SELECT ROW_NUMBER() 
 
 OVER(ORDER BY Employee.first_name ASC) AS Row_Num, 
 Employee.first_name AS "Employee First Name", 
 Employee.last_name AS "Employee Last Name",
-EmployeeCategory.category_name AS "Employee Type",
+EmployeeType.type_name AS "Employee Type",
 EmployeeStatus.status_name AS "Employee Status", 
 Customer.first_name AS "Customer First Name",
 Customer.begin_date AS "Loyalty Membership Start Date",
 Store.store_name AS "Store"
 
 FROM Employee
+INNER JOIN Customer ON Customer.create_employee_id = Employee.id
+INNER JOIN EmployeeType ON EmployeeType.id = Employee.employee_type_id
+INNER JOIN EmployeeStatus ON EmployeeStatus.id = Employee.employee_status_id
 INNER JOIN EmployeeJob ON EmployeeJob.employee_id = Employee.id
 INNER JOIN Store ON Store.id = EmployeeJob.store_id
-INNER JOIN Customer ON Customer.create_employee_id = Employee.id
-INNER JOIN EmployeeCategory ON EmployeeCategory.id = Employee.employee_type_id
-INNER JOIN EmployeeStatus ON EmployeeStatus.id = Employee.employee_status_id
+WHERE Employee.employee_status_id=1 AND Customer.begin_date >= @begin_date AND Customer.begin_date <= @end_date
