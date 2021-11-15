@@ -146,25 +146,3 @@ WHERE EmployeeJob.store_id = 2
 
 
 
-/*
-SELECT  COUNT(Employee.id) AS 'NumEmployeeStart',
-	   (SELECT COUNT(Employee.id) AS 'Num of Employees'
-		FROM Employee
-		INNER JOIN EmployeeJob ON EmployeeJob.employee_id = Employee.id
-		INNER JOIN Job ON EmployeeJob.job_id = Job.id
-		INNER JOIN EmployeeType ON Employee.employee_type_id = EmployeeType.id
-		INNER JOIN EmployeeStatus ON Employee.employee_status_id = EmployeeStatus.id
-		INNER JOIN EmployeeEmployeeCategory ON EmployeeEmployeeCategory.employee_id = Employee.id
-		INNER JOIN EmployeeCategory ON EmployeeEmployeeCategory.employee_category_id = EmployeeCategory.id
-		INNER JOIN Store ON EmployeeJob.store_id = Store.id
-		WHERE Employee.begin_date >= '1/1/2015'
-		AND EmployeeStatus.is_active = 1) AS 'NumEmployeeEnd'
-		--('NumEmployeeEnd' - 'NumEmployeeEnd') / 'NumEmployeeEnd' AS 'Retention Rate'
-		--SET @RetentionRate = (@NumStart -@NumEnd) / @NumStart AS 'Retention Rate'
-		
-FROM Employee  
-WHERE Employee.begin_date <= '1/1/2012'
-*/
-
-
-
