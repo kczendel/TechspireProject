@@ -3,7 +3,7 @@
 --The client can use this report to view the most frequent customers from her specific store. This report can help her to identify her most frequent customer who visits her specific store. The client can analyze which tier customers are frequent customers from this report. The client can use the information from this report for advertisements, encourage those customers to visit more by sending gratitude, and providing more discounts and offers.
 --Displays top 10 customers information from her particular store
 --Full Name,Email Address,Phone,Store Name,Tier,Last Visit,No of Visit
---,,,phone,,,
+--,,phone,,,,right
 DECLARE @store_id INT = 1
 
 SELECT TOP 10 first_name + ' ' + last_name AS Full_Name, 
