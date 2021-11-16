@@ -1,7 +1,7 @@
 -- Kyle Dela Pena
 -- Categorized Average Employee Duration
 -- The client can use this report to see which employee classification has the highest and lowest employee retention rate and determine the average length of employment, which can be helpful information that can be used to set the length of time before any employee receives a raise. The report could also be used to determine which job role, category, and type allows for the greatest employee retention rate. It is then up to the client to modify each job association to either increase or decrease the employee retention. This can be done by lowering or increases wages, adding or removing bonuses, and increasing or decreasing paid time off hours.
--- Selects all the different employee classifications such as job role, category, and type and finds the Avg Employment of each.
+-- Selects all the different employee classifications such as job role, category, and type and finds the average employment length of each.
 -- Employee Classifcation, Total Employee Days, Total Employee Count, Avg Employment in Days, Avg Employment in Months
 -- null,right,right,right,right
 
