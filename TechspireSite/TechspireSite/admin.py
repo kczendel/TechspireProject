@@ -139,14 +139,26 @@ class TechSpireAdminSite(admin.AdminSite):
         return TemplateResponse(request, self.index_template or 'admin/index.html', context)
 
     def reports_index(self, request, extra_context=None):
-        module_dir = os.path.dirname(__file__)  # get current directory
         paths, names = views.get_report_paths()
+        print(names)
+        reports = [{"name": "Employees", "reports": []}, {"name": "Customers", "reports": []},
+                   {"name": "Other", "reports": []}]
+
+        for index,report in enumerate(names):
+            if "employee".lower() in report.lower():
+                cat = 0
+            elif "customer".lower() in report.lower():
+                cat = 1
+            else:
+                cat = 2
+
+            reports[cat]["reports"].append({"report": report, "index": index})
 
         context = {
             **self.each_context(request),
             'title': "Reports",
             'subtitle': None,
-            'report_list':  names,
+            'report_list':  reports,
             **(extra_context or {}),
         }
 

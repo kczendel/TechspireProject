@@ -29,7 +29,7 @@ def get_report_paths():
         name = open(path).readlines()[1]
         name = name.replace("--", "")
         out.append([name, path])
-    out.sort(key=lambda x: x[0])
+    out.sort(key=lambda x: x[0].replace(" ", ""))
     paths = []
     names = []
     for element in out:

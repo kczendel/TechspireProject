@@ -1,5 +1,5 @@
 -- Julia Chen
---  Loyalty Members Based on Specific Customer Tier and Their Active Status
+--Loyalty Members Based on Specific Customer Tier and Their Active Status
 -- The client can use this report to view members that belong to a specific tier and their activity status. In the screenshot the report displays customers that belong to the Bronze tier and are currently active customers, as well as their basic personal information. These reports can let her quickly view a list of customers that belong to a particular tier and allows her to target her promotions to customers that fit a specific criteria. For example, she may decide to target her promotions towards active Bronze Tier customers by offering them limited-time offers such as discounts or coupons in an effort to incentivize them into increasing their spending.
 -- This report displays loyalty members of a specified tier and active status, and displays their member information such as their full name, birthday, email phone number, current status and the loyalty tier they belong to.
 -- Row,Full Name,Birthday,Email,Phone #,Current Status,Current Tier

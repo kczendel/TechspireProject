@@ -1,31 +1,22 @@
-{% extends 'admin/index.html' %}
 {% load i18n %}
 {% load static %}
-{% block title %}{% endblock %}
-{% block sidebar %}{% endblock %}
-{% block extrahead %}{{ block.super }}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{% static 'js/collapse_buttons.js' %}"></script>
-{% endblock %}
-
-{% block breadcrumbs %}
-    <div class="breadcrumbs">
-    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a> › {{ title }}
-    </div>
-{% endblock %}
-
-{% block content %}
-    {% for category in report_list %}
+{% if app_list %}
+  {% for app in app_list %}
     <div class="app-{{ app.app_label }} module{% if app.app_url in request.path %} current-app{% endif %} link_table">
       <table>
         <caption>
-          <a href="{{ app.app_url }}" class="section" title="{{category.name}}">{{category.name}}</a>
-          <button style="float:right; padding:2px 10px; background:#34c156" class="collapse_button button">+</button>
+          <a href="{{ app.app_url }}" class="section" title="{% blocktranslate with name=app.name %}Models in the {{ name }} application{% endblocktranslate %}">{{ app.name }}</a>
+            <button style="float:right; padding:2px 10px; background:#34c156" class="collapse_button button">+</button>
         </caption>
-        {% for report in category.reports %}
+        {% for model in app.models %}
           <tr class="model-{{ model.object_name|lower }}{% if model.admin_url in request.path %} current-model{% endif %}">
-              <th scope="row"><a href="{% url 'admin:report' index=report.index %}" aria-current="page">{{ report.report }}</a></th>
-
+            {% if model.admin_url %}
+              <th scope="row"><a href="{{ model.admin_url }}"{% if model.admin_url in request.path %} aria-current="page"{% endif %}>{{ model.name }}</a></th>
+            {% else %}
+              <th scope="row">{{ model.name }}</th>
+            {% endif %}
 
             {% if model.add_url %}
               <td><a href="{{ model.add_url }}" class="addlink">{% translate 'Add' %}</a></td>
@@ -46,5 +37,7 @@
         {% endfor %}
       </table>
     </div>
-    {% endfor %}
-{% endblock %}
+  {% endfor %}
+{% else %}
+  <p>{% translate 'You don’t have permission to view or edit anything.' %}</p>
+{% endif %}

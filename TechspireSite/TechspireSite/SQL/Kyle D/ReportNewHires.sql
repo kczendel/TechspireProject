@@ -1,5 +1,5 @@
 -- Kyle Dela Pena
--- New Hires
+--New Hires
 -- The client can use this report to contact new hires and assign them training based on their job role, type, and category. One association might have more priority than the other, for example, the first store could need a full-time Baker immediately. The second store could also need a part-time cashier contractor role, but that is a lower priority because it is not an immediate necessity as that is a future requirement.
 -- Displays all new employees within a given time along with contact information and job associations such as job role, type, and category.
 -- Row Num, First Name, Last Name, Duration in Days, Job Name, Store Name, Type Name, Category Name, Email Address, Start Date
