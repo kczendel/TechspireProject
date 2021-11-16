@@ -6,22 +6,16 @@
 --,,,,,right
 
 SELECT ROW_NUMBER () OVER(ORDER BY Product.product_name, Product.product_price) AS 'Row Num',
-
 ProductType.product_type_name AS 'Product Type',
 Product.product_name AS 'Product Name',
 BanType.ban_name AS 'Ban Reason',
 ProductStatus.status_name AS 'Product Status',
 CONCAT('$', CAST (Product.product_price as decimal(18,2))) AS 'Product Price'
-
 FROM Product
-
-INNER JOIN BanType 
+INNER JOIN BanType
 ON BanType.id = Product.ban_reason_id
-
-INNER JOIN ProductStatus 
+INNER JOIN ProductStatus
 ON ProductStatus.id = Product.product_status_id
-
-INNER JOIN ProductType 
+INNER JOIN ProductType
 ON ProductType.id = Product.product_type_id
-
 WHERE BanType.id = 1
