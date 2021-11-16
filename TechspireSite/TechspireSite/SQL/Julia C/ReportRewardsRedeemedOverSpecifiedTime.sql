@@ -11,7 +11,7 @@ DECLARE @end_date VARCHAR(12) = '2015-12-31'
 SELECT ROW_NUMBER()
 OVER (ORDER BY "Order".order_date) AS ROW_NUM,
 
-"Order".store_id AS 'Location',
+store.store_name AS 'Location',
 MAX("Order".order_date) AS 'Latest Date Redeemed',
 Reward.reward_name AS 'Reward Name',
 COUNT(Reward.id) AS 'Times Redeemed'
@@ -25,5 +25,4 @@ JOIN PointLog ON PointLog.order_id = "Order".id
 WHERE "Order".store_id = @store_id
 AND "Order".order_date >= @begin_date AND "Order".order_date <= @end_date
 
-GROUP BY "Order".store_id, "Order".order_date, Reward.reward_name
-
+GROUP BY store.store_name, "Order".order_date, Reward.reward_name
