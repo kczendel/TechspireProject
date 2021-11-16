@@ -140,7 +140,6 @@ class TechSpireAdminSite(admin.AdminSite):
 
     def reports_index(self, request, extra_context=None):
         paths, names = views.get_report_paths()
-        print(names)
         reports = [{"name": "Employees", "reports": []}, {"name": "Customers", "reports": []},
                    {"name": "Other", "reports": []}]
 

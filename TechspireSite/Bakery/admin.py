@@ -253,13 +253,31 @@ class PointLogAdmin(TwentyPageAdmin):
     raw_id_fields = ["order", "employee", "customer"]
 
 
+@admin.register(models.Country)
+class CountryAdmin(TwentyPageAdmin):
+    list_display = ["country_name"]
+    search_fields = ["country_name"]
+
+
+@admin.register(models.StateProvince)
+class StateAdmin(TwentyPageAdmin):
+    list_display = ["state_name", "country"]
+    search_fields = ["state_name"]
+
+
+@admin.register(models.Tier)
+class TierAdmin(TwentyPageAdmin):
+    list_display = ["tier_name", "min_points"]
+
+
+
 # Register all the models for bakery that don't have a custom admin model
 def register_models():
     basic_admin_models = [models.ProductType, models.ProductStatus, models.CustomerStatus,
                           models.EmployeeStatus, models.RewardStatus, models.StoreStatus,
                           models.EmployeeLabel, models.EmployeeType,
                           models.Job, models.BanType, models.PointReason, models.SocialMediaType, models.PaymentType,
-                          models.StateProvince, models.Country, models.CustomerLabel, models.Tier]
+                          models.CustomerLabel]
     for target_model in basic_admin_models:
         admin.site.register(target_model, TwentyPageAdmin)
 
