@@ -14,7 +14,7 @@ EmployeeSocialMedia.social_media_code AS 'Username',
 Employee.email_address AS 'Email Address',
 Employee.phone_number AS PhoneNumber,
 Location.zip_code AS 'Zip Code', 
-Location.city AS 'City', 
+Location.city AS 'City' 
 
 
 FROM Employee
