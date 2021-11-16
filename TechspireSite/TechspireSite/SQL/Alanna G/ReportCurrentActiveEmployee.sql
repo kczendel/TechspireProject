@@ -20,8 +20,5 @@ ON EmployeeJob.job_id = Job.id
 INNER JOIN EmployeeStatus
 ON Employee.employee_status_id = EmployeeStatus.id
 
---INNER JOIN Store
---ON Store.store_name = EmployeeJob.store_id
-
 WHERE EmployeeStatus.id = 1 AND EmployeeJob.store_id = 1
 
