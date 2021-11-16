@@ -13,16 +13,10 @@ Job.job_name AS 'Job Title'
 
 
 FROM Employee
-
-INNER JOIN EmployeeJob 
+INNER JOIN EmployeeJob
 ON EmployeeJob.employee_id = Employee.id
-
-INNER JOIN Job 
+INNER JOIN Job
 ON EmployeeJob.job_id = Job.id
-
-INNER JOIN EmployeeType
-ON Employee.employee_type_id = EmployeeType.id
-
 INNER JOIN EmployeeStatus
 ON Employee.employee_status_id = EmployeeStatus.id
 
