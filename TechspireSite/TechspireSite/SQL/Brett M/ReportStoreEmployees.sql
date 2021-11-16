@@ -1,5 +1,5 @@
 --Brett Meirhofer
---Active Cashiers At Store One
+--Active Cashiers at HotBreads Store
 --The client can use this report to contact Cashiers that currently work at the Hotbreads Location. Understaffing or overstaffing of Cashiers could be identified and corrected using this document in conjunction with other documents such as the store schedule.
 --Displays all Cashiers that currently work at the Hotbreads location.
 --Row Number,Type,Employee Name,Phone Number,Email Address

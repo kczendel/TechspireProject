@@ -21,15 +21,11 @@ class FieldTypeMap:
 
 # Builds the names/paths used for the Reports Index page
 def get_report_paths():
-    paths = ["SQL\Brett M\ReportActiveCashierTransactionAmounts.sql",
-             "SQL\Brett M\ReportCashiersPointsGivenStoreOne.sql",
-             "SQL\Brett M\ReportEmployeeLocations.sql",
-             "SQL\Brett M\ReportStoreEmployees.sql", ]
+    module_dir = os.path.dirname(__file__)
+    paths = get_reports(module_dir)
     out = []
 
     for path in paths:
-        module_dir = os.path.dirname(__file__)
-        path = os.path.join(module_dir, path)
         name = open(path).readlines()[1]
         name = name.replace("--", "")
         out.append([name, path])
@@ -264,7 +260,6 @@ def build_report_obj(path):
                 col_class = align[index]
                 new_row.append([column, col_class])
             new_output.append(new_row)
-
 
     report_data = ReportData(owner, name, rule, new_output, titles, report_text, desc)
     return report_data
