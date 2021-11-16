@@ -3,7 +3,7 @@
 --The client can utilize this report to mail seasonal promotions, coupons, or vouchers.
 --The report will display the clients customers email and mailing address from a specific store.
 --Customer_ID, Full_Name, Email, Address, City, Zip_Code, Store_Name
---,,,,,,,
+--,,,,,
 
 DECLARE @store_name INT = 1
 SELECT Full_Name, Email, Address, City, Zip_Code, Store_Name From (
