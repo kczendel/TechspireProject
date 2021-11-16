@@ -5,7 +5,7 @@
 --Product ID, Product, Product Status, Price, Product Type, Store
 --,,,,right,,
 
-SELECT ROW_NUMBER () OVER(ORDER BY product.id) AS 'Product ID',
+SELECT ROW_NUMBER () OVER(ORDER BY Product.product_name) AS 'Row',
 Product.product_name AS 'Product',
 ProductStatus.status_name AS 'Product Status',
 CONCAT('$', CAST (Product.product_price as decimal(18,2))) AS 'Price',

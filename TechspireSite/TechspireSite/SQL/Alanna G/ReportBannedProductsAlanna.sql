@@ -6,7 +6,7 @@
 --,,,,,,right
 
 SELECT ROW_NUMBER () OVER(ORDER BY Product.product_name, Product.product_price) AS 'Row Num',
-Product.id AS 'Product ID',
+
 ProductType.product_type_name AS 'Product Type',
 Product.product_name AS 'Product Name',
 BanType.ban_name AS 'Ban Reason',
@@ -25,5 +25,3 @@ INNER JOIN ProductType
 ON ProductType.id = Product.product_type_id
 
 WHERE BanType.id = 1
-
-
