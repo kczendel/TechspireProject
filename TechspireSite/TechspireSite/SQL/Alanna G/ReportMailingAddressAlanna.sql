@@ -1,7 +1,7 @@
 --Alanna Gilcrease
 --Mailing List
---The report will display the clients customers email and mailing address.
 --The client can utilize this report to mail seasonal promotions, coupons, or vouchers.
+--The report will display the clients customers email and mailing address from a specific store.
 --Full Name, Email, Address, City, Zip Code, Store Name
 --,,,,,
 
