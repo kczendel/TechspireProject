@@ -2,8 +2,8 @@
 --Cookies Sold at Houston Hot Breads
 --The client can utilize this report to update the cookie recipes dependent on season.
 --The purpose of the report is to list all cookies at Houston Hot Breads.
---Row, Product, Product Status, Price, Product Type, Store
---,,,,right,
+--Product ID, Product, Product Status, Price, Product Type, Store
+--,,,,right,,
 
 SELECT ROW_NUMBER () OVER(ORDER BY Product.product_name) AS 'Row',
 Product.product_name AS 'Product',
