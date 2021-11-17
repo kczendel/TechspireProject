@@ -120,6 +120,15 @@ class TechSpireAdminSite(admin.AdminSite):
 
         return TemplateResponse(request, self.index_template or 'admin/bakery_dash.html', context)
 
+
+    def backup(self, request, extra_context=None):
+        context = {
+            **self.each_context(request),
+            'title': "Backup",
+        }
+
+        return TemplateResponse(request, self.index_template or 'admin/backup.html', context)
+
     def actual_index(self, request, extra_context=None):
         app_list = self.get_app_list(request)
         module_dir = os.path.dirname(__file__)  # get current directory
@@ -191,6 +200,7 @@ class TechSpireAdminSite(admin.AdminSite):
             path('top_emps_month', self.admin_view(views.top_emps_month), name='top_emps_month'),
             path('top_cust_month', self.admin_view(views.top_cust_month), name='top_cust_month'),
             path('data_doc', self.admin_view(views.generate_data_document), name='data_doc'),
+            path('backup', self.admin_view(self.backup), name='backup'),
 
         ]
         return my_urls + urls
